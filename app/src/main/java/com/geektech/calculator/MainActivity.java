@@ -26,117 +26,49 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.btn_one:
                 //нажал на единицу
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("1");
-                } else if (isOperationClick) {
-                    tvResult.setText("1");
-                } else {
-                    tvResult.append("1");
-                }
-                isOperationClick = false;
+                setNumber("1");
                 break;
-            case R.id.btn_two:
-                //нажал на двойку
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("2");
-                } else if (isOperationClick) {
-                    tvResult.setText("2");
-                } else {
-                    tvResult.append("2");
-                }
-                isOperationClick = false;
+            case R.id.btn_three3:
+            setNumber("3");
+            break;
+            case R.id.btn_foure4:
+                setNumber("4");
+                break;
+            case R.id.btn_five5:
+                setNumber("5");
+                break;
+            case R.id.btn_six6:
+                setNumber("6");
+                break;
+            case R.id.btn_seven7:
+                setNumber("7");
+                break;
+            case R.id.btn_eight8:
+                setNumber("8");
+                break;
+            case R.id.btn_nine9:
+                setNumber("9");
+                break;
+            case R.id.btn_zero:
+                setNumber("0");
                 break;
             case R.id.btn_clear:
                 tvResult.setText("0");
+                first = 0;
+                second = 0;
+                break;
 
-                break;
-            case R.id.btn_three3:
-
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("3");
-                } else if (isOperationClick) {
-                    tvResult.setText("3");
-                } else {
-                    tvResult.append("3");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_foure4:
-                //нажал на единицу
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("4");
-                } else if (isOperationClick) {
-                    tvResult.setText("4");
-                } else {
-                    tvResult.append("4");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_five5:
-
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("5");
-                } else if (isOperationClick) {
-                    tvResult.setText("5");
-                } else {
-                    tvResult.append("5");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_six6:
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("6");
-                } else if (isOperationClick) {
-                    tvResult.setText("6");
-                } else {
-                    tvResult.append("6");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_seven7:
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("7");
-                } else if (isOperationClick) {
-                    tvResult.setText("7");
-                } else {
-                    tvResult.append("7");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_eight8:
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("8");
-                } else if (isOperationClick) {
-                    tvResult.setText("8");
-                } else {
-                    tvResult.append("8");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_nine9:
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("9");
-                } else if (isOperationClick) {
-                    tvResult.setText("9");
-                } else {
-                    tvResult.append("9");
-                }
-                isOperationClick = false;
-                break;
-            case R.id.btn_zero:
-                if (tvResult.getText().toString().equals("0")) {
-                    tvResult.setText("0");
-                } else if (isOperationClick) {
-                    tvResult.setText("0");
-                } else {
-                    tvResult.append("0");
-                }
-                isOperationClick = false;
-                break;
         }
         tvResult.setText(operator);
 
 
+    }
+
+    public void setNumber(String number){
+        if(tvResult.getText().toString().equals("0")) tvResult.setText(number);
+        else if(isOperationClick) tvResult.setText(number);
+        else tvResult.append(number);
+        isOperationClick = false;
     }
 
     public void onOperationClick(View view) {
