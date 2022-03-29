@@ -74,33 +74,33 @@ public class MainActivity extends AppCompatActivity {
     public void onOperationClick(View view) {
         switch (view.getId()) {
             case R.id.btn_plus:
-            setFirst();
+                first = Integer.parseInt(tvResult.getText().toString());
             isOperationClick = true;
             operator = "+";
             break;
 
             case R.id.btn_minus:
-                setFirst();
+                first = Integer.parseInt(tvResult.getText().toString());
                 isOperationClick = true;
                 operator = "-";
                 break;
             case R.id.umnog:
-                setFirst();
+                first = Integer.parseInt(tvResult.getText().toString());
                 isOperationClick = true;
                 operator = "*";
                 break;
             case R.id.delenie:
-                setFirst();
+                first = Integer.parseInt(tvResult.getText().toString());
                 isOperationClick = true;
                 operator = "/";
                 break;
             case R.id.btn_prochent:
-                setFirst();
+                first = Integer.parseInt(tvResult.getText().toString());
                 isOperationClick = true;
                 operator = "%";
                 break;
             case R.id.plusminus:
-                setFirst();
+                first = Integer.parseInt(tvResult.getText().toString());
                 isOperationClick = true;
                 operator = "+/-";
                 break;
@@ -113,47 +113,41 @@ public class MainActivity extends AppCompatActivity {
                 Integer result = 0;
                 tvResult.setText(result.toString());
                 isOperationClick = true;
+
+
                 switch (operator){
                     case "+":
                         result = first + second;
-                        tvResult.setText(result.toString());
                         break;
 
                     case "-":
                         result = first - second;
-                        tvResult.setText(result.toString());
                         break;
+
                     case "*":
                         result = first * second;
-                        tvResult.setText(result.toString());
                         break;
+
                     case "/":
                         result = first / second;
-                        tvResult.setText(result.toString());
                         break;
+
                     case "%":
-                        result = first  / 100;
-                        tvResult.setText(result.toString());
+                        result = (second * 100) / first;
                         break;
 
                     case "+/-":
                         result = first *= - 1;
-                        tvResult.setText(result.toString());
+
                         break;
 
                 }
+                tvResult.setText(result.toString());
                 break;
         }
         }
 
 
-public void setFirst(){
-    first = Integer.parseInt(tvResult.getText().toString());
-}
-    public void onOperationEgual(View view) {
-       String second = tvResult.getText().toString();
 
-
-       }
     }
 
