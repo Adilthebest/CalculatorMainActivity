@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-        tvResult.setText(operator);
+
 
 
     }
@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_equal:
                 second = Integer.parseInt(tvResult.getText().toString());
                 Integer result = 0;
-                tvResult.setText(result.toString());
                 isOperationClick = true;
 
 
