@@ -15,4 +15,9 @@
         <item name="android:statusBarColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="SplashTime" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@mipmap/ic_calculator</item>
+        <item name ="backgroundColor">@color/white</item>
+    </style>
 </resources>

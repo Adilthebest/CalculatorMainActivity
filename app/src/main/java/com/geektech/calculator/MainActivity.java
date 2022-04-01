@@ -2,11 +2,15 @@ package com.geektech.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    private Button btn_next;
  private String operator;
     private TextView tvResult;
     private Integer first;
@@ -18,9 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewById(R.id.nextBtn).setVisibility(View.GONE);
         tvResult = findViewById(R.id.tv_result);
-
+       btn_next = findViewById(R.id.nextBtn);
     }
+
 
     public void onNumberClick(View view) {
         switch (view.getId()) {
@@ -112,7 +118,19 @@ public class MainActivity extends AppCompatActivity {
                 second = Integer.parseInt(tvResult.getText().toString());
                 Integer result = 0;
                 isOperationClick = true;
+             if (isOperationClick = true)
+                findViewById(R.id.nextBtn).setVisibility(View.VISIBLE);
 
+                btn_next.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainActivity.this,Main3Activity.class);
+                        String text = tvResult.getText().toString();
+                        intent.putExtra("nextbtn", text);
+                        startActivity(intent);
+
+                    }
+                });
 
                 switch (operator){
                     case "+":
@@ -144,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
                 tvResult.setText(result.toString());
                 break;
         }
+
+
         }
-
-
 
     }
 
